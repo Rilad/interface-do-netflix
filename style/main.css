@@ -1,3 +1,141 @@
-body {
-    background-color: blue;
+/*reset CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/*declaração de variáveis*/
+:root {
+    --vermelho: #E50914;
+    --preta: #141414;
+}
+
+/*elementos base*/
+body {
+    background: var(--preta);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+header .container {
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo {
+    text-decoration: none;
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times, serif;
+    font-size: 40px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+header nav a:hover {
+    color: #fff;
+}
+
+/*filme principal*/
+.filme-principal {
+    font-size: 16px;
+    background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)100%), url('/img/capa-house.jpg');
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo {
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.botao {
+    background-color: rgba(0, 0, 0, .50);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.botao:hover {
+    background-color: white;
+    color: black;
+}
+.botao i {
+    margin-right: 8px;
+}
+
+.container {
+    margin-left: 20px;
+}
+
+.filme-principal .container {
+    width: 70%; 
+}
+
+.box-filme {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrossel-filmes {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5%;
+    padding-top: 55px;
+    padding-bottom: 0;
+}
+
+.carrossel-filmes .titulo-secao {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+#navbar {
+    z-index: 9999; /*The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.*/
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--preta);
+}
+  
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0)  */
+.sticky + main {
+    padding-top: 60px;
+}
+
+.item {
+    transition: .3s ease all;
+    cursor: pointer;
+}
+
+.item:hover {
+  transform: scale(1.1);
+}
+  
